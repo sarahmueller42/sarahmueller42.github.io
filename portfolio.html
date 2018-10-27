@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
   <!-- owl carousel-->
   <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.green.css">
   <!-- theme stylesheet-->
   <link rel="stylesheet" href="css/style.red.css" id="theme-stylesheet">
   <!-- Custom stylesheet - for your changes-->
@@ -193,4 +193,50 @@
   <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
   <script src="js/front.js"></script>
+    <script>
+  $(document).ready(function() {
+    if ($(window).width() > 767.98) {
+      var size = $("#sidebar").width()
+      $( "#main").css({ marginLeft : size + 10});
+    }
+  });
+  $( window ).resize(function() {
+    console.log($(window).width())
+    if ($(window).width() > 767.98) {
+      var size = $("#sidebar").width()
+      $( "#main").css({ marginLeft : size + 10});
+    } else {
+      $( "#main").css({ marginLeft : 0});
+    }
+    });
+  $('#sidebarButton').click(function() {
+      var size = $("#sidebar").width();
+      console.log(size);
+      if (size > 5) {
+        console.log("big");
+        $('#sidebar').css({left: 0});
+      } 
+  });
+  $(document).scroll(function() {
+    var scroll_top = $(document).scrollTop();
+    var div_top = $('#index').position().top;
+    var div_one_top = $('#education').position().top;
+    var div_two_top = $('#experience').position().top;
+    if(scroll_top > div_one_top && scroll_top < div_two_top) {
+        //You are now past div one
+        $('#education-link').addClass('active');
+        $('#experience-link').removeClass('active');
+        $('#index-link').removeClass('active');
+    } else if( scroll_top > div_two_top) {
+        //You are now past div two
+       $('#experience-link').addClass('active');
+       $('#education-link').removeClass('active');
+       $('#index-link').removeClass('active');
+    } else {
+      $('#experience-link').removeClass('active');
+       $('#education-link').removeClass('active');
+       $('#index-link').addClass('active');
+    }
+  });
+  </script>
 </body>
