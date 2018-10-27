@@ -209,18 +209,13 @@
     });
 
   $('#sidebarButton').click(function() {
-    
-    setTimeout(function(){ 
-          var size = $("#sidebar").width()
-          console.log(size);
-          if (size > 5) {
-            console.log("big");
-            $('#sidebar').css({left: 0});
-          } else {
-            console.log("YAS");
-            $('#sidebar').css({left: -10});
-          }
-    }, 1000);  
+
+      var size = $("#sidebar").width();
+      console.log(size);
+      if (size > 5) {
+        console.log("big");
+        $('#sidebar').css({left: 0});
+      } 
 
 
   });
