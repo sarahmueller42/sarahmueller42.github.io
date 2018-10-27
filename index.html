@@ -143,7 +143,7 @@
                     <!-- Georgetown Math -->
                     <div class="row">
                       <div class="col-10 frame">
-                        <p class="lead experience">Georgetown Math Department TA</p>
+                        <p class="lead experience">Georgetown Math Department</p>
                         <p class="experience"><b>Teaching Assistant, Calculus II and III</b> ● <i>August 2017 – May 2018</i></p>
                         <ul class="experience">
                           <li>Taught 30 students Calculus III at weekly recitation section, worked with professor to create engaging lecture material.</li> 
@@ -193,13 +193,37 @@
   <script src="js/front.js"></script>
   <script>
   $(document).ready(function() {
-    var size = $("#sidebar").width()
-    $( "#main").css({ marginLeft : size + 10});
-    });
+    if ($(window).width() > 767.98) {
+      var size = $("#sidebar").width()
+      $( "#main").css({ marginLeft : size + 10});
+    }
+  });
   $( window ).resize(function() {
-    var size = $("#sidebar").width()
-    $( "#main").css({ marginLeft : size + 10});
+    console.log($(window).width())
+    if ($(window).width() > 767.98) {
+      var size = $("#sidebar").width()
+      $( "#main").css({ marginLeft : size + 10});
+    } else {
+      $( "#main").css({ marginLeft : 0});
+    }
     });
+
+  $('#sidebarButton').click(function() {
+    
+    setTimeout(function(){ 
+          var size = $("#sidebar").width()
+          console.log(size);
+          if (size > 5) {
+            console.log("big");
+            $('#sidebar').css({left: 0});
+          } else {
+            console.log("YAS");
+            $('#sidebar').css({left: -10});
+          }
+    }, 1000);  
+
+
+  });
 
   $(document).scroll(function() {
     var scroll_top = $(document).scrollTop();

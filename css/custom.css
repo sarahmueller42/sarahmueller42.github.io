@@ -3,21 +3,7 @@
 /* The sidebar menu */
 
 
-.sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
 
-@media (min-width: 576px) {
-  .sidebar {
-    position: absolute !important;
-  }
-}
 
 .experience {
     margin-bottom: 2px!important;
@@ -36,4 +22,20 @@
     left: 0;  
     right: 0;  
     margin: auto;
+}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .sidebar {
+    position: absolute !important;
+  }
 }
