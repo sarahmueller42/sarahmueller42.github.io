@@ -54,7 +54,7 @@
                   </li>
                 <!-- Link-->
                 <li class="sidebar-item">
-                  <a href="#skills" id="experience-link" class="sidebar-link">Technical Skills</a>
+                  <a href="#skills" id="skills-link" class="sidebar-link">Technical Skills</a>
                   </li>
                 <!-- Link-->
             </ul>
@@ -197,17 +197,25 @@
     var div_top = $('#index').position().top;
     var div_one_top = $('#education').position().top;
     var div_two_top = $('#experience').position().top;
+    var div_three_top = $('#skills').position().top;
 
     if(scroll_top > div_one_top && scroll_top < div_two_top) {
         //You are now past div one
         $('#education-link').addClass('active');
         $('#experience-link').removeClass('active');
         $('#index-link').removeClass('active');
-    } else if( scroll_top > div_two_top) {
+        $('#skills-link').removeClass('active');
+    } else if( scroll_top > div_two_top && scroll_top < div_three_top) {
         //You are now past div two
        $('#experience-link').addClass('active');
        $('#education-link').removeClass('active');
        $('#index-link').removeClass('active');
+       $('#skills-link').removeClass('active');
+    } else if( scroll_top > div_three_top ){
+       $('#skills-link').addClass('active');
+       $('#education-link').removeClass('active');
+       $('#index-link').removeClass('active');
+       $('#experience-link').removeClass('active');
     } else {
       $('#experience-link').removeClass('active');
        $('#education-link').removeClass('active');
